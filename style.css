@@ -7,7 +7,8 @@ body,
 .bottomButtons,
 .numberButtons,
 .buttonRow,
-.operatorButtons {
+.operatorButtons,
+.calculator {
     display: flex;
 }
 
@@ -15,13 +16,65 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
 .mainContainer {
-    width: 90vw;
-    max-width: 600px;
-    aspect-ratio: 1 / 1.5;
-    background-color: brown;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .calculator {
+        width: 92vw;
+        max-width: 600px;
+        aspect-ratio: 1 / 1.5;
+        background-color: brown;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+        .screen {
+            margin: 10px;
+            background-color: aqua;
+            flex: 1 1;        
+        }
+
+        .bottomButtons {
+            margin: 0px 10px 10px;
+            background-color: hotpink;
+            flex: 3 1;
+        }
+
+            .numberButtons {
+                background-color: blueviolet;
+                flex-direction: column;
+                flex: 3 1;
+            }
+
+                .buttonRow {
+                    background-color: gold;
+                    flex: 1 1;
+                }
+
+                    .button {
+                        background-color: grey;
+                        border-style: solid;
+                        flex: 1 1;
+                        margin: 10px;
+                        font-size: 30px;
+                        text-align: center;
+                    }
+            
+            .operatorButtons {
+                background-color: mediumspringgreen;
+                flex-direction: column;
+                flex: 1 1;
+            }
+
+.footer {
+    height: 40px;
+    background-color: aquamarine;
 }
