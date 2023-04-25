@@ -1,5 +1,6 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
 }
 
 body,
@@ -19,6 +20,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: #bcdbdf;
 }
 
 .mainContainer {
@@ -31,31 +33,31 @@ body {
         width: 92vw;
         max-width: 600px;
         aspect-ratio: 1 / 1.5;
-        background-color: brown;
+        background-color: #f7aa00;
         flex-direction: column;
         margin-top: 20px;
     }
 
         .screen {
             margin: 10px;
-            background-color: aqua;
-            flex: 1 1;        
+            background-color: #bcdbdf;
+            flex: 1 1;
+            padding: 20px;;
+            font-size: 50px;
         }
 
         .bottomButtons {
             margin: 0px 10px 10px;
-            background-color: hotpink;
             flex: 3 1;
         }
 
             .numberButtons {
-                background-color: blueviolet;
+                background-color: #235784;
                 flex-direction: column;
                 flex: 3 1;
             }
 
                 .buttonRow {
-                    background-color: gold;
                     flex: 1 1;
                 }
 
@@ -69,12 +71,13 @@ body {
                     }
             
             .operatorButtons {
-                background-color: mediumspringgreen;
+                background-color: #40a8c4;
                 flex-direction: column;
                 flex: 1 1;
             }
 
 .footer {
     height: 40px;
-    background-color: aquamarine;
+    background-color: #235784;
+    align-self: stretch;
 }
