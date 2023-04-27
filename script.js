@@ -19,10 +19,6 @@
 //     console.log(screenContent)
 // })
 
-//make delete button work
-//make AC button work
-//make (-) button work
-
 const numbers = document.querySelectorAll('.num');
 const operatorButtons = document.querySelectorAll('.op')
 

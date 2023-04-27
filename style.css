@@ -37,9 +37,11 @@ body {
         width: 92vw;
         max-width: 600px;
         aspect-ratio: 1 / 1.5;
-        background-color: #f7aa00;
+        background-color: #40a8c4;
         flex-direction: column;
         margin-top: 20px;
+        border-style: solid;
+        /* box-shadow: black 10px; */
     }
 
         .screen {
@@ -48,7 +50,8 @@ body {
             flex: 1 1;
             padding: 20px;
             font-size: 50px;
-            flex-direction: column;            
+            flex-direction: column;
+            border-style: solid;     
         }
 
             .topScreen{
@@ -57,18 +60,16 @@ body {
             }
 
                 .topLeftScreen {
-                    border-style: solid;
                     flex: 5 1;
                 }
                 
                 .topRightScreen {
-                    border-style: solid;
                     flex: 1 1;
                 }
 
             .bottomScreen {
-                border-style: solid;
                 flex: 2 1;
+                font-size: 70px;
                 display: flex;
                 align-items: flex-end;
                 justify-content: flex-end;
@@ -78,7 +79,6 @@ body {
             background-color: #40a8c4;
             margin: 0px 10px 0px;
             flex: 0.1 1;
-            border-radius: 10px 10px 0 0;
         }
 
         .bottomButtons {
@@ -90,7 +90,7 @@ body {
                 background-color: #235784;
                 flex-direction: column;
                 flex: 3 1;
-                border-radius: 0 0 0 10px;;
+                border-radius: 10px;;
             }
 
                 .buttonRow {
@@ -99,7 +99,7 @@ body {
 
                     .button,
                     .equals {
-                        background-color: grey;
+                        background-color: rgb(153, 152, 152);
                         border-style: solid;
                         flex: 1 1;
                         margin: 10px;
@@ -111,12 +111,15 @@ body {
                         align-items: center;
                         justify-content: center;                       
                     }
+
+                    .pressed {
+                        
+                    }
             
             .operatorButtons {
                 background-color: #40a8c4;
                 flex-direction: column;
                 flex: 1 1;
-                border-radius: 0 0 10px 0;
             }
 
 .footer {
