@@ -30,6 +30,7 @@ const operatorButtons = document.querySelectorAll('.op')
 const topLeftScreen = document.querySelector('.topLeftScreen');
 const topRightScreen = document.querySelector('.topRightScreen');
 const bottomScreen = document.querySelector('.bottomScreen');
+const equals = document.querySelector('.equals');
 
 
 let screenContent = '';
@@ -55,6 +56,13 @@ operatorButtons.forEach(operatorButton => {
         screenContent = '';
     })
 })
+
+equals.addEventListener('click', () => {
+    evaluate(+numMemory, +screenContent, previousOpButton);
+    bottomScreen.textContent = numMemory;
+    screenContent = '';
+    previousOpButton = '';
+});
 
 function evaluate(a, b, operator) {
     switch(operator) {
