@@ -1,6 +1,7 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
+    border-radius: 10px;;
 }
 
 body,
@@ -9,7 +10,10 @@ body,
 .numberButtons,
 .buttonRow,
 .operatorButtons,
-.calculator {
+.calculator,
+.topButtons,
+.screen,
+.topScreen {
     display: flex;
 }
 
@@ -42,8 +46,36 @@ body {
             margin: 10px;
             background-color: #bcdbdf;
             flex: 1 1;
-            padding: 20px;;
+            padding: 20px;
             font-size: 50px;
+            flex-direction: column;            
+        }
+
+            .topScreen{
+                width: 100%;
+                flex: 1 1;
+            }
+
+                .topLeftScreen {
+                    border-style: solid;
+                    flex: 5 1;
+                }
+                
+                .topRightScreen {
+                    border-style: solid;
+                    flex: 1 1;
+                }
+
+            .bottomScreen {
+                border-style: solid;
+                flex: 2 1;
+            }
+
+        .topButtons {
+            background-color: #40a8c4;
+            margin: 0px 10px 0px;
+            flex: 0.1 1;
+            border-radius: 10px 10px 0 0;
         }
 
         .bottomButtons {
@@ -55,6 +87,7 @@ body {
                 background-color: #235784;
                 flex-direction: column;
                 flex: 3 1;
+                border-radius: 0 0 0 10px;;
             }
 
                 .buttonRow {
@@ -75,10 +108,12 @@ body {
                 background-color: #40a8c4;
                 flex-direction: column;
                 flex: 1 1;
+                border-radius: 0 0 10px 0;
             }
 
 .footer {
     height: 40px;
     background-color: #235784;
     align-self: stretch;
+    border-radius: 0;
 }
