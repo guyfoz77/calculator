@@ -32,6 +32,7 @@ const bottomScreen = document.querySelector('.bottomScreen');
 const equals = document.querySelector('.equals');
 const buttonAC = document.querySelector('.AC');
 const buttonDel = document.querySelector('.del');
+const buttonNeg = document.querySelector('.neg');
 
 
 let screenContent = '';
@@ -82,6 +83,11 @@ buttonAC.addEventListener('click', () => {
 
 buttonDel.addEventListener('click', () => {
     screenContent = screenContent.slice(0, -1);
+    bottomScreen.textContent = screenContent;
+})
+
+buttonNeg.addEventListener('click', () => {
+    screenContent = `-${screenContent}`;
     bottomScreen.textContent = screenContent;
 })
 
