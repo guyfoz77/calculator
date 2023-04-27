@@ -21,6 +21,7 @@
 
 const numbers = document.querySelectorAll('.num');
 const operatorButtons = document.querySelectorAll('.op')
+const buttons = document.querySelectorAll('.button');
 
 const topLeftScreen = document.querySelector('.topLeftScreen');
 const topRightScreen = document.querySelector('.topRightScreen');
@@ -34,6 +35,15 @@ const buttonNeg = document.querySelector('.neg');
 let screenContent = '';
 let prevAnswer = '';
 let previousOpButton = '';
+
+buttons.forEach(button => {
+    button.addEventListener('mousedown', (e) => {
+        button.classList.add('pressed');
+    })
+    button.addEventListener('mouseup', (e) => {
+        button.classList.remove('pressed');
+    })
+});
 
 numbers.forEach(number => {
     number.addEventListener('click', function (e) {
