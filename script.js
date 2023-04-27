@@ -19,10 +19,9 @@
 //     console.log(screenContent)
 // })
 
-//get screen number
-//when operator button is pressed, move screen number to variable
-//get new number
-//when operator button is pressed, make the calculation and move answer to the main screen
+//make delete button work
+//make AC button work
+//make (-) button work
 
 const numbers = document.querySelectorAll('.num');
 const operatorButtons = document.querySelectorAll('.op')
@@ -31,6 +30,8 @@ const topLeftScreen = document.querySelector('.topLeftScreen');
 const topRightScreen = document.querySelector('.topRightScreen');
 const bottomScreen = document.querySelector('.bottomScreen');
 const equals = document.querySelector('.equals');
+const buttonAC = document.querySelector('.AC');
+const buttonDel = document.querySelector('.del');
 
 
 let screenContent = '';
@@ -69,6 +70,20 @@ equals.addEventListener('click', () => {
     topLeftScreen.textContent = '';
     topRightScreen.textContent = '';
 });
+
+buttonAC.addEventListener('click', () => {
+    screenContent = '';
+    prevAnswer = '';
+    previousOpButton = '';
+    topLeftScreen.textContent = '';
+    topRightScreen.textContent = '';
+    bottomScreen.textContent = '';
+})
+
+buttonDel.addEventListener('click', () => {
+    screenContent = screenContent.slice(0, -1);
+    bottomScreen.textContent = screenContent;
+})
 
 function evaluate(a, b, operator) {
     switch(operator) {
