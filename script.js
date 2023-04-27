@@ -33,7 +33,8 @@ const bottomScreen = document.querySelector('.bottomScreen');
 
 
 let screenContent = '';
-let numMemory = ''
+let numMemory = '';
+let previousOpButton = '';
 
 numbers.forEach(number => {
     number.addEventListener('click', function (e) {
@@ -43,15 +44,32 @@ numbers.forEach(number => {
 });
 
 operatorButtons.forEach(operatorButton => {
-    operatorButton.addEventListener('click', function () {
+    operatorButton.addEventListener('click', function (e) {
         if (numMemory == '') {
             numMemory = screenContent;
-            screenContent = '';
-            topLeftScreen.textContent = numMemory;
-            bottomScreen.textContent = '';
-        }
-
+        } else evaluate(+numMemory, +screenContent, previousOpButton);
+        topLeftScreen.textContent = numMemory;
+        previousOpButton = e.target.dataset.key;
+        topRightScreen.textContent = previousOpButton;
+        bottomScreen.textContent = '';
+        screenContent = '';
     })
 })
 
-// function evaluate(a, b, operator)
+function evaluate(a, b, operator) {
+    switch(operator) {
+        case '+':
+            numMemory = a + b;
+            break;
+        case '-':
+            numMemory = a - b;
+            break;
+        case '*':
+            numMemory = a * b;
+            break;
+        case '/':
+            numMemory = a / b;
+            break;
+    }
+
+}
