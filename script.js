@@ -34,7 +34,7 @@ const equals = document.querySelector('.equals');
 
 
 let screenContent = '';
-let numMemory = '';
+let prevAnswer = '';
 let previousOpButton = '';
 
 numbers.forEach(number => {
@@ -46,10 +46,11 @@ numbers.forEach(number => {
 
 operatorButtons.forEach(operatorButton => {
     operatorButton.addEventListener('click', function (e) {
-        if (numMemory == '') {
-            numMemory = screenContent;
-        } else evaluate(+numMemory, +screenContent, previousOpButton);
-        topLeftScreen.textContent = numMemory;
+        if (prevAnswer == '') {
+            prevAnswer = screenContent;
+        } else evaluate(+prevAnswer, +screenContent, previousOpButton);
+        
+        topLeftScreen.textContent = prevAnswer;
         previousOpButton = e.target.dataset.key;
         topRightScreen.textContent = previousOpButton;
         bottomScreen.textContent = '';
@@ -58,25 +59,30 @@ operatorButtons.forEach(operatorButton => {
 })
 
 equals.addEventListener('click', () => {
-    evaluate(+numMemory, +screenContent, previousOpButton);
-    bottomScreen.textContent = numMemory;
+    if (prevAnswer == '') {
+        prevAnswer = screenContent;
+    } else evaluate(+prevAnswer, +screenContent, previousOpButton);
+    
+    bottomScreen.textContent = prevAnswer;
     screenContent = '';
     previousOpButton = '';
+    topLeftScreen.textContent = '';
+    topRightScreen.textContent = '';
 });
 
 function evaluate(a, b, operator) {
     switch(operator) {
         case '+':
-            numMemory = a + b;
+            prevAnswer = a + b;
             break;
         case '-':
-            numMemory = a - b;
+            prevAnswer = a - b;
             break;
-        case '*':
-            numMemory = a * b;
+        case 'x':
+            prevAnswer = a * b;
             break;
-        case '/':
-            numMemory = a / b;
+        case '÷':
+            prevAnswer = a / b;
             break;
     }
 
